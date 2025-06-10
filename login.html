@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Universitas Klabat</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #0f2c40, #0a1f33);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-box {
+      background-color: #fff;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 320px;
+    }
+
+    .login-box img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #0f2c40;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      align-self: flex-start;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    .button-group {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      background-color: #0f2c40;
+      color: white;
+    }
+
+    .login-btn:hover {
+      background-color: #164a64;
+    }
+
+    .reset-btn {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .reset-btn:hover {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+<div class="login-box">
+    <img src="image.png/unklab.png" alt="Universitas Klabat Logo">
+    <h1>UNIVERSITAS KLABAT</h1>
+    <p class="tagline">Pathway to Excellence</p>
+
+    <form id="loginForm" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    
+      <div class="button-group">
+        <button type="submit" class="login-btn">Login</button>
+      </div>
+    </form>
+    <div class="button-group">
+        <button onclick="window.location.href='registration.html'">Registration</button>
+    </div>
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Cegah form submit normal
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+
+    // Contoh validasi sederhana (bisa diganti sesuai kebutuhan)
+    if (username === "imanuel" && password === "123") {
+      // Simpan data ke sessionStorage (opsional)
+      sessionStorage.setItem("username", username);
+
+      // Redirect ke tugas.html
+      window.location.href = "tugas.html";
+    } else {
+      alert("Username atau password salah. Silakan coba lagi.");
+    }
+  });
+</script>
+</body>
+</html>
